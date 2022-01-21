@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('') {
+      steps {
+        echo 'pipeline build and ran'
+      }
+    }
+
   }
 }
