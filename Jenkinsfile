@@ -7,7 +7,7 @@ pipeline {
           steps {
             echo 'testing SSH'
             sshagent(credentials: ['RemoteCredentials']) {
-              sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.20.68.29 -a'
+              sh 'ssh -tt-o StrictHostKeyChecking=no -l jenkins 10.20.68.29 -a'
             }
 
           }
