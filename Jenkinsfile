@@ -2,10 +2,20 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      steps {
-        echo 'done'
-        sh '''ssh jenkins@10.20.68.29
-'''
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'done'
+          }
+        }
+
+        stage('wait 5') {
+          steps {
+            sleep 5
+            echo 'waited 5 seconds'
+          }
+        }
+
       }
     }
 
