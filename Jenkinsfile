@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
           steps {
             echo 'testing SSH'
-            sshagent(credentials: ['RemoteCredentials']) {
+            sshagent(credentials: ['jenkins-lx029']) {
               sh 'ssh -t-o StrictHostKeyChecking=no -l jenkins 10.20.68.29 -a'
             }
 
