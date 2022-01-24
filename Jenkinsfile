@@ -5,7 +5,10 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
-            echo 'done'
+            echo 'testing SSH'
+            sshagent(['RemoteCredentials']) {
+            sh 'ssh -o StrictHostKeyChecking=no -l jenkins remotetarget 10.20.68.29 -a'
+            }
           }
         }
 
