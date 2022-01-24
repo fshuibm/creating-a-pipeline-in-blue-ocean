@@ -4,6 +4,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'done'
+        sh '''ssh jenkins@10.20.68.29
+'''
       }
     }
 
