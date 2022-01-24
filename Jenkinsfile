@@ -19,11 +19,5 @@ pipeline {
       }
     }
 
-    stage('error') {
-      steps {
-        echo 'pipeline build and ran'
-      }
-    }
-
   }
 }
