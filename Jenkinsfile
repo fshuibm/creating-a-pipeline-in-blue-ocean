@@ -3,11 +3,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'npm install'
+        echo 'done'
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'pipeline build and ran'
       }
