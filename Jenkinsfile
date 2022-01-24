@@ -6,9 +6,10 @@ pipeline {
         stage('Build') {
           steps {
             echo 'testing SSH'
-            sshagent(['RemoteCredentials']) {
-            sh 'ssh -o StrictHostKeyChecking=no -l jenkins remotetarget 10.20.68.29 -a'
+            sshagent(credentials: ['RemoteCredentials']) {
+              sh 'ssh -o StrictHostKeyChecking=no -l jenkins 10.20.68.29 -a'
             }
+
           }
         }
 
